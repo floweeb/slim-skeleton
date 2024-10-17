@@ -1,4 +1,21 @@
 {
+    "name": "floweeb/slim-skeleton",
+    "description": "A Slim Framework skeleton with minimal set up, the rest u can add, but project is ready for dev",
+    "keywords": [
+        "microframework",
+        "rest",
+        "router",
+        "psr7",
+        "json"
+    ],
+    "homepage": "https://github.com/floweeb/slim-skeleton",
+    "authors": [
+        {
+            "name": "Floyd Karanja",
+            "email": "floydqaranja@gmail.com",
+            "homepage": "https://floweeb.github.io/"
+        }
+    ],
     "require": {
         "slim/slim": "4.*",
         "slim/psr7": "^1.7",
