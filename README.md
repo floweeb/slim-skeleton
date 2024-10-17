@@ -17,3 +17,9 @@ and locked in the dependencies of the project, if update is needed call:
 
 ## Getting started
 to install dependencies call `php composer.phar install`.
+
+### Database support
+It supports both mysql and postgres connections, make sure the postgres ext in
+php.ini is uncommented `;extension=pdo_pgsql`, mysql is uncommented by default,
+to set the configs, make a `config.ini` file at the root of the project using 
+`config.ini.example` as a template.
