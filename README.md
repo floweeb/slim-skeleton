@@ -1,6 +1,7 @@
 # Slim Skeleton - Another DAMN framework thingy
 > [!CAUTION]
 > NOTE THIS IS A PERSONAL PROJECT USE AT OWN RISK!!
+
 > [!CAUTION]
 > At current state it is not PROD ready even by a long shot, add .httaccess for it work.
 
