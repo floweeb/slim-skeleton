@@ -14,7 +14,7 @@ class Database
         private string $db_name,
         private string $user,
         private string $password,
-        private int $port,
+        private string $port,
     ) {}
     public function getConnection(): PDO
     {
