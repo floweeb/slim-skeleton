@@ -5,6 +5,8 @@
 > [!CAUTION]
 > At current state it is not PROD ready even by a long shot, add .httaccess for it work.
 
+My goal is to have an easy starting point for a REST API, with only json and can serve a front-end.
+
 I needed a basic structure to start projects and get going quickly.
 Here I installed the basic packages:
 ```
