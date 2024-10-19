@@ -15,9 +15,6 @@ define('RESP_JSON', 'application/json');
 require APP_ROOT . '/vendor/autoload.php';
 
 $container = new Container;
-// // Adding dB connection details for container to use for starting up class.
-// $container = $builder->addDefinitions(APP_ROOT . '/config/database_conn.php')
-//     ->build();
 AppFactory::setContainer($container);
 
 // set dB instationation in container.
