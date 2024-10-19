@@ -6,7 +6,11 @@ namespace App;
 
 class JWT
 {
-    public function __construct(private string $secret) {}
+    private static $secret;
+    public function __construct(string $secret)
+    {
+        self::$secret = $secret;
+    }
     // Create a JWT
     public static function createToken(array $payload, int $expiry): string
     {
