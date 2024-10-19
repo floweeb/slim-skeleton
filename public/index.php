@@ -8,6 +8,7 @@ use Slim\Factory\AppFactory;
 use DI\ContainerBuilder;
 
 define('APP_ROOT', dirname(__DIR__));
+define('RESP_JSON', 'application/json');
 
 require APP_ROOT . '/vendor/autoload.php';
 
@@ -20,12 +21,12 @@ AppFactory::setContainer($container);
 $app = AppFactory::create();
 
 $error_middleware = $app->addErrorMiddleware(true, true, true); //set 1st true false in prod.
-$error_middleware->getDefaultErrorHandler()->forceContentType('application/json');  // force json for all errors
+$error_middleware->getDefaultErrorHandler()->forceContentType(RESP_JSON);  // force json for all errors
 
 // json return middleware
 $json_middleware = function (Request $request, RequestHandler $handler) {
     $response = $handler->handle($request);
-    $response = $response->withHeader('Content-Type', 'application/json');
+    $response = $response->withHeader('Content-Type', RESP_JSON);
     return $response;
 };
 $app->add($json_middleware);
