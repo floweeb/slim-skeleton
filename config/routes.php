@@ -10,6 +10,6 @@ $app->get('/{name}', function (Request $request, Response $response, array $args
     $this->get(App\Database::class)->getConnection();
 
     $name = $args['name'];
-    $response->getBody()->write(json_encode("Hello, $name"));
+    $response->getBody()->write(json_encode(['name' => $name]));
     return $response;
 });

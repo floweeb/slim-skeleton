@@ -1,11 +1,14 @@
+[env]
+prod = false
+[JWT]
+; there is a helper function to generate secret: App/JWT::generate256BitKey(): string
+secret=your_secret
 [database]
 ; only 2 available database types: 'mysql' and 'pgsql', it defaults to mysql.
 db_type = mysql
 host = localhost
 db_name = your_db_name
-user = your_user
+user = your_user_name
 password = your_password
 ; default 'mysql' port: 3306 and 'pgsql' port: 5432
 port = 3306
-[env]
-prod = false
