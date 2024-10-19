@@ -6,7 +6,7 @@ namespace App;
 
 class JWT
 {
-    public function __construct(private string $secretKey) {}
+    public function __construct(private string $secret) {}
     // Create a JWT
     public static function createToken(array $payload, int $expiry): string
     {
@@ -24,7 +24,7 @@ class JWT
         $base64Payload = self::base64UrlEncode(json_encode($payload));
 
         // Create the signature using HMAC SHA256 and the secret key
-        $signature = hash_hmac('sha256', "$base64Header.$base64Payload", $this->secretKey, true);
+        $signature = hash_hmac('sha256', "$base64Header.$base64Payload", self::$secret, true);
         $base64Signature = self::base64UrlEncode($signature);
 
         // Return the JWT: header.payload.signature
@@ -43,7 +43,7 @@ class JWT
         [$base64Header, $base64Payload, $base64Signature] = $parts;
 
         // Recreate the signature using the header and payload
-        $signature = hash_hmac('sha256', "$base64Header.$base64Payload", $this->secretKey, true);
+        $signature = hash_hmac('sha256', "$base64Header.$base64Payload", self::$secret, true);
         $expectedSignature = self::base64UrlEncode($signature);
 
         // Compare the signatures
