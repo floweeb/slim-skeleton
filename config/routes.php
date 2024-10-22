@@ -44,9 +44,9 @@ $app->group('', function (RouteCollectorProxy $group) {
 
 // Serve frontend - this should be last to catch all other routes
 $app->get('[/{path:.*}]', function (Request $request, Response $response) {
-    $indexPath = APP_ROOT . '/public/frontend/index.html';
+    $indexPath = APP_ROOT . '/public/index.html';
     if (!file_exists($indexPath)) {
-        throw new \Slim\Exception\HttpInternalServerErrorException($request, "Front end not found, please place file under `public\frontend`");
+        throw new \Slim\Exception\HttpInternalServerErrorException($request, "Place index.html file next to index.php under `public` folder.");
     }
 
     $html = file_get_contents($indexPath);
