@@ -6,4 +6,5 @@
 *.ini
 /public/*
 !/public/index.php
+!/public/.htaccess
 !/public/index.html
