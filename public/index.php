@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
 use Slim\Factory\AppFactory;
 use DI\Container;
 use App\Database;
@@ -40,14 +38,6 @@ $app = AppFactory::create();
 
 $error_middleware = $app->addErrorMiddleware(true, true, true); //set 1st true false in prod.
 $error_middleware->getDefaultErrorHandler()->forceContentType(RESP_JSON);  // force json for all errors
-
-// json return middleware
-$json_middleware = function (Request $request, RequestHandler $handler) {
-    $response = $handler->handle($request);
-    $response = $response->withHeader('Content-Type', RESP_JSON);
-    return $response;
-};
-$app->add($json_middleware);
 
 // routes can be added in below file to stop cramping up here.
 require APP_ROOT . '/config/routes.php';
