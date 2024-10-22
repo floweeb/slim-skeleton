@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /
+# If the requested resource exists as a file or directory, skip rewriting
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
