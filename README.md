@@ -1,6 +1,14 @@
 # Slim Skeleton - Another DAMN framework thingy
 
-My goal is to have an easy starting point for a JSON REST API, that serves a front-end project at none api routes.
+This skeleton is a basic backend rest API for slim php skeleton with JWT authentication and minimal dependencies.
+Write api routes in the group routes to ensure 'json/application' content-type.
+
+It serves the frontend from the public folder just drop your `index.html` and you are good to go.
+> Note the .gitignore ignores all files in the public folder except: `index.php`, `.htaccess` and `index.html`
+> so watch out in development.
+
+This is specifically works for apache web server, but make sure `mod_rewrite` is enabled.
+For other server options contact for more info.
 
 > [!CAUTION]
 > NOTE THIS IS A PERSONAL PROJECT USE AT OWN RISK!!
