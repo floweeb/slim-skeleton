@@ -40,6 +40,7 @@ $error_middleware = $app->addErrorMiddleware(true, true, true); //set 1st true f
 $error_middleware->getDefaultErrorHandler()->forceContentType(RESP_JSON);  // force json for all errors
 
 // routes can be added in below file to stop cramping up here.
-require APP_ROOT . '/config/routes.php';
+$routes = require APP_ROOT . '/config/routes.php';
+$routes($app);
 
 $app->run();
